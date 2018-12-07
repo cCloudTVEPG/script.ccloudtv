@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.ccloudtv" name="cCloud TV Guide" version="0.1.10G" provider-name="podgod Temporary Fix by Deadpool">
+<addon id="script.ccloudtv" name="cCloud TV Guide" version="X.X.X.Use_Official" provider-name="podgod Temporary Fix by Deadpool">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
