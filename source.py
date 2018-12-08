@@ -822,7 +822,7 @@ class XMLTVSource(Source):
     cCloud_AI = 'guide_ai.xmltv'
     cCloud_USTV = 'guide_ustv.xmltv'
     cCloud_USUKBASIC = 'guide_usukbasic.xmltv'
-    cCloud_URL = 'https://ccloudtv.000webhostapp.com/cCloud_files/'
+    cCloud_URL = 'https://raw.githubusercontent.com/cCloudTVEPG/Guides/master/Guide.xml'
     KEY = 'xmltv'
     INI_TYPE_CCLOUD = 0
     INI_TYPE_CUSTOM = 1
