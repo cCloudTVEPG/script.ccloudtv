@@ -816,13 +816,13 @@ class Source(object):
 
 class XMLTVSource(Source):
     PLUGIN_DATA = xbmc.translatePath(os.path.join('special://profile', 'addon_data', 'script.ccloudtv'))
-    cCloud_BASIC = 'guide.xml'
-    cCloud_ALL = 'guide.xml'
-    cCloud_Joker = 'guide_joker.xmltv'
-    cCloud_AI = 'guide_ai.xmltv'
-    cCloud_USTV = 'guide_ustv.xmltv'
+    cCloud_BASIC = 'Guide.xml'
+    cCloud_ALL = 'Guide.xml'
+    cCloud_UKBASIC = 'guide_ukbasic.xmltv'
+    cCloud_UKSKY = 'guide_uksky.xmltv'
+    cCloud_USTV = 'guide_ustvnow.xmltv'
     cCloud_USUKBASIC = 'guide_usukbasic.xmltv'
-    cCloud_URL = 'https://raw.githubusercontent.com/cCloudTVEPG/Guides/master/Guide.xml'
+    cCloud_URL = 'https://github.com/cCloudTVEPG/Guides/raw/master/'
     KEY = 'xmltv'
     INI_TYPE_CCLOUD = 0
     INI_TYPE_CUSTOM = 1
@@ -882,7 +882,7 @@ class XMLTVSource(Source):
     def updateLocalFile(self, name):
         path = os.path.join(XMLTVSource.PLUGIN_DATA, name)
         fetchFile = not os.path.exists(path) # always fetch if file doesn't exist!
- 
+
         # check the interval if not set to "Always"
         if (not fetchFile and self.xmltvInterval <> XMLTVSource.INTERVAL_ALWAYS):
             modTime = datetime.datetime.fromtimestamp(os.path.getmtime(path))
@@ -897,7 +897,7 @@ class XMLTVSource(Source):
         else:
             fetchFile = True
             xbmc.log('[script.ccloudtv] Interval set to always or file doesn\'t exist. Fetching...', xbmc.LOGDEBUG)
- 
+
         if (fetchFile):
             f = open(path,'wb')
             f.write(urllib2.urlopen(XMLTVSource.cCloud_URL + name).read())
